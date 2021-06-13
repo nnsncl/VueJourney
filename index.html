@@ -8,17 +8,22 @@
     <title>Vue Journey</title>
 </head>
 <body>
-    <main id='app' v-bind:title='message'>
-        <p>
-            {{ `${message} on ${plateform}` }}
-        </p>
+    <main id='app'>
+        <h1 v-bind:title='title' >{{ title }}</h1>
+        <p v-bind:title='description' >{{ description }}</p>
+        <a v-bind:title='link.title' target="_blank" v-bind:href="link.href">{{ link.description }}</a>
     </main>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                'message': 'Vue learning journey',
-                'plateform': 'scrimba'
+                'title': 'Learning Vue on Scrimba',
+                'description': 'How to remove data from the DOM and put it on the Vue instance',
+                'link': {
+                    'title': 'Redirect to vuejs.org',
+                    'description': 'About Vue',
+                    'href': 'https://vuejs.org/'
+                }
             }
         });
     </script>
