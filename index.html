@@ -8,16 +8,17 @@
     <title>Vue Journey</title>
 </head>
 <body>
-    <main id='app' >
+    <main id='app' v-bind:title='message'>
         <p>
-            {{ message }}
+            {{ `${message} on ${plateform}` }}
         </p>
     </main>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Vue learning journey'
+                'message': 'Vue learning journey',
+                'plateform': 'scrimba'
             }
         });
     </script>
