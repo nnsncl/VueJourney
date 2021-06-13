@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,31 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>Vue Journey</title>
 </head>
+
 <body>
     <main id='app'>
-        <h1 v-bind:title='title' >{{ reversedMessage }}</h1>
+        <h1 v-bind:title='title'>{{ title }}</h1>
+        <input type="text" name='field' v-model='field' placeholder="" />
+        <p>Current value: {{ exclamation }}</p>
     </main>
+
     <script>
         var app = new Vue({
             el: '#app',
             data: {
                 'title': 'Learning Vue on Scrimba',
+                'field': ''
             },
             computed: {
                 exclamation: function() {
-                    return this.title + '!';
-                },
-
-                reversedMessage: function() {
-                    return this.exclamation.split('').reverse().join('');
-                }
+                    return this.field + '!';
             }
-        });
+        }
+
+    });
+
     </script>
 
 </body>
+
 </html>
