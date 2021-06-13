@@ -9,20 +9,21 @@
 </head>
 <body>
     <main id='app'>
-        <h1 v-bind:title='title' >{{ title }}</h1>
-        <p v-bind:title='description' >{{ description }}</p>
-        <a v-bind:title='link.title' target="_blank" v-bind:href="link.href">{{ link.description }}</a>
+        <h1 v-bind:title='title' >{{ reversedMessage }}</h1>
     </main>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
                 'title': 'Learning Vue on Scrimba',
-                'description': 'How to remove data from the DOM and put it on the Vue instance',
-                'link': {
-                    'title': 'Redirect to vuejs.org',
-                    'description': 'About Vue',
-                    'href': 'https://vuejs.org/'
+            },
+            computed: {
+                exclamation: function() {
+                    return this.title + '!';
+                },
+
+                reversedMessage: function() {
+                    return this.exclamation.split('').reverse().join('');
                 }
             }
         });
