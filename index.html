@@ -12,30 +12,25 @@
 <body>
     <main id='app'>
         <h1 v-bind:title='title'>{{ title }}</h1>
-        <input type="text" name='field' v-model='fullName' placeholder="" />
-        <p>firstName: {{ firstName }}</p>
-        <p>lastName: {{ lastName }}</p>
+        <input type="text" name='field' v-model='field' placeholder="" />
+        <button>Call to Action</button>
+
+        <p>
+            Current value: {{ modified }}
+        </p>
     </main>
 
     <script>
-        var app = new Vue({
+        const app = new Vue({
             el: '#app',
             data: {
                 'title': 'Learning Vue on Scrimba',
-                'firstName': '',
-                'lastName': '',
+                'field': '',
+                'modified': ''
             },
             computed: {
-                fullName: {
-                    get: function () {
-                        return `${this.firstName} ${this.lastName}`
-                    },
-                    set: function (newValue) {
-                        let names = newValue.split(' ');
-
-                        this.firstName = names[0];
-                        this.lastName = names[1];
-                    }
+                modified: function() {
+                    return this.field;
                 }
             }
 
