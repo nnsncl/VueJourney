@@ -1,14 +1,19 @@
 <template>
-  <Navigation />
+  <section>
+    <Navigation />
+    <Heading />
+  </section>
 </template>
 
 <script>
 import Navigation from './components/Navigation.vue'
+import Heading from './components/Heading.vue'
 
 export default {
   name: 'App',
   components: {
-    Navigation
+    Navigation,
+    Heading
   }
 }
 </script>
