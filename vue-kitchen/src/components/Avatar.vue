@@ -1,17 +1,31 @@
 <template>
   <div class="avatar" >
-    <div class="avatar--container" >
-      <img class="avatar--image" src="https://linktopin.com/assets/images/avatars/random-avatar2.jpg" alt="">
+    <article class="avatar--container" >
+      <img
+        class="avatar--image"
+        src="https://linktopin.com/assets/images/avatars/random-avatar2.jpg"
+        alt="">
       <span class="avatar--badge" ></span>
-    </div>
-    <p class="avatar--label" >Niki</p>
+    </article>
+    <p class="avatar--label" >{{ name }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Avatar',
-  props: {}
+  props: {
+    name: {
+      type: String,
+      required: true,
+      default: 'Corbo Boi',
+      validator: (value) => {
+        return value.length >= 3
+      }
+    },
+    badgeColor: String,
+    image: String
+  }
 }
 </script>
 
@@ -36,7 +50,8 @@ export default {
     display: block;
     width: 1rem;
     height: 1rem;
-    background: lightgreen;
+    background: greenyellow;
+    border: 2px solid white;
     margin: -1rem 0;
     border-radius: 100%;
   }
