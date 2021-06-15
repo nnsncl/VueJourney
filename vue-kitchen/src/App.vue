@@ -85,6 +85,9 @@ data() {
     font-size: 62.5%;
     color: #111;
     background: #fafafa;
+    max-width: 789px;
+    margin: 0 auto;
+    padding: 0 2.3rem;
   }
   .form {
     display: flex;

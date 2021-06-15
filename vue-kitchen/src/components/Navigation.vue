@@ -1,7 +1,6 @@
 <template>
   <nav class="nav">
-        <img alt="Vue logo" height='50' src="../assets/logo.png">
-        <button class="nav--action" >Button</button>
+    <img alt="Vue logo" height='50' src="../assets/logo.png">
   </nav>
 </template>
 
