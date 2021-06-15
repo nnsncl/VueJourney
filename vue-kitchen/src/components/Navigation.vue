@@ -1,13 +1,19 @@
 <template>
   <nav class="nav">
     <img alt="Vue logo" height='50' src="../assets/logo.png">
+    <Avatar />
   </nav>
 </template>
 
 <script>
+import Avatar from './Avatar.vue'
+
 export default {
   name: 'Navigation',
-  props: {}
+  props: {},
+    components: {
+    Avatar
+  },
 }
 </script>
 
@@ -20,7 +26,6 @@ export default {
         padding: 2.3rem 0;
         border-bottom: 1px solid #D8D8D8;
     }
-
     .nav--action {
         all: unset;
         cursor: pointer;
