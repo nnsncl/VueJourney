@@ -5,7 +5,7 @@
         class="avatar--image"
         :src='image'
         alt="">
-      <span :style="{backgroundColor: badgeColor}" class="avatar--badge" ></span>
+      <span  :class="['avatar--badge', { 'avatar--badge-disconnected':userActive  }]" ></span>
     </article>
     <p class="avatar--label" >{{ name }}</p>
   </div>
@@ -31,6 +31,9 @@ export default {
       type: String,
       required: false,
       default: 'https://linktopin.com/assets/images/avatars/random-avatar2.jpg'
+    },
+    userActive: {
+      type: Boolean
     }
   }
 }
