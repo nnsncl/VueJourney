@@ -2,7 +2,7 @@
   <section>
     <Navigation />
     <Heading />
-    <form class="form" @submit.prevent='addRecipe' >
+    <!-- <form class="form" @submit.prevent='addRecipe' >
       <fieldset class="fieldset">
         <label class="fieldset--label" for='name-field'>Name</label>
         <input class='fieldset--input' name='name-field' v-model='recipe.name' type="text" />
@@ -28,7 +28,11 @@
           <p class="section--details" >{{ recipe.steps }}</p>
         </div>
         <button class="action" @click='deleteRecipe(index)' >Delete</button>
+      </section> -->
+      <section class="section" >
+        <ProfilCard />
       </section>
+
   </section>
 </template>
 
@@ -37,12 +41,14 @@ import {v4 as uuidv4} from 'uuid';
 
 import Navigation from './components/Navigation.vue'
 import Heading from './components/Heading.vue'
+import ProfilCard from './components/ProfilCard.vue'
 
 export default {
   name: 'App',
   components: {
     Navigation,
-    Heading
+    Heading,
+    ProfilCard
   },
 data() {
     return {
