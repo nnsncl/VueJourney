@@ -3,6 +3,7 @@
     <img alt="Vue logo" height='50' src="../assets/logo.png">
     <Avatar
       name='Niki'
+      badgeColor='#212121'
       image='https://media.giphy.com/media/JRi5RF32hwXJu/giphy.gif' />
   </nav>
 </template>

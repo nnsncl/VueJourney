@@ -5,7 +5,7 @@
         class="avatar--image"
         :src='image'
         alt="">
-      <span class="avatar--badge" ></span>
+      <span :style="{backgroundColor: badgeColor}" class="avatar--badge" ></span>
     </article>
     <p class="avatar--label" >{{ name }}</p>
   </div>
@@ -64,6 +64,9 @@ export default {
     border: 2px solid white;
     margin: -1rem 0;
     border-radius: 100%;
+  }
+  .avatar--badge-disconnected {
+    background: grey;
   }
   .avatar--label {
     font-size: 1.3rem;
