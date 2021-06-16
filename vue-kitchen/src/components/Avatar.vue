@@ -5,7 +5,9 @@
         class="avatar--image"
         :src='image'
         alt="">
-      <span  :class="['avatar--badge', { 'avatar--badge-disconnected':userActive  }]" ></span>
+      <span
+        v-if='badgeColor'
+        :class="['avatar--badge', { 'avatar--badge-disconnected':userActive  }]" ></span>
     </article>
     <p class="avatar--label" >{{ name }}</p>
   </div>
@@ -23,14 +25,13 @@ export default {
         return value.length >= 3
       }
     },
-    badgeColor: {
-      type: String,
-      required: false
-    },
     image: {
       type: String,
       required: false,
       default: 'https://linktopin.com/assets/images/avatars/random-avatar2.jpg'
+    },
+    badgeColor: {
+      type: String,
     },
     userActive: {
       type: Boolean
@@ -63,7 +64,6 @@ export default {
     display: block;
     width: 1rem;
     height: 1rem;
-    background: greenyellow;
     border: 2px solid white;
     margin: -1rem 0;
     border-radius: 100%;
