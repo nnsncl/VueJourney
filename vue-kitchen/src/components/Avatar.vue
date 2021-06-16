@@ -3,7 +3,7 @@
     <article class="avatar--container" >
       <img
         class="avatar--image"
-        src="https://linktopin.com/assets/images/avatars/random-avatar2.jpg"
+        :src='image'
         alt="">
       <span class="avatar--badge" ></span>
     </article>
@@ -23,8 +23,15 @@ export default {
         return value.length >= 3
       }
     },
-    badgeColor: String,
-    image: String
+    badgeColor: {
+      type: String,
+      required: false
+    },
+    image: {
+      type: String,
+      required: false,
+      default: 'https://linktopin.com/assets/images/avatars/random-avatar2.jpg'
+    }
   }
 }
 </script>
@@ -44,7 +51,10 @@ export default {
   }
   .avatar--image {
     max-width: 50px;
+    width: 50px;
+    min-height: 50px;
     border-radius: 100%;
+    background: grey;
   }
   .avatar--badge {
     display: block;

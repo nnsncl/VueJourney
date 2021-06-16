@@ -3,7 +3,7 @@
     <img alt="Vue logo" height='50' src="../assets/logo.png">
     <Avatar
       name='Niki'
-      image='https://linktopin.com/assets/images/avatars/random-avatar2.jpg' />
+      image='https://media.giphy.com/media/JRi5RF32hwXJu/giphy.gif' />
   </nav>
 </template>
 
