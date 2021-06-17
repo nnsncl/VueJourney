@@ -30,7 +30,13 @@
         <button class="action" @click='deleteRecipe(index)' >Delete</button>
       </section> -->
       <section class="section" >
-        <ProfilCard />
+        <ProfilCard
+          :pro='true'
+          :skills="['Pet Lama', 'Chase Lama', 'Eat Lama']"
+          job='Lamas Hunter'
+          name='Niki Nik'
+          town='Bratislava'
+         />
       </section>
 
   </section>

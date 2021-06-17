@@ -37,7 +37,7 @@ export default {
         image: {
             type: String,
             required: false,
-            default: 'https://randomuser.me/api/portraits/women/79.jpg'
+            default: 'https://randomuser.me/api/portraits/women/56.jpg'
         },
         town: {
             type: String,
