@@ -1,6 +1,6 @@
 <template>
   <section>
-    <Navigation />
+    <!-- <Navigation /> -->
     <!-- <Heading /> -->
     <!-- <form class="form" @submit.prevent='addRecipe' >
       <fieldset class="fieldset">
@@ -40,7 +40,11 @@
       </section> -->
       
       <section class="section flex-center" >
-        <Counter />
+        <Counter
+          v-for="(countItem, index) in counterList"
+          :key='index'
+          :initCountValue='countItem'
+        />
       </section>
 
   </section>
@@ -49,7 +53,7 @@
 <script>
 // import {v4 as uuidv4} from 'uuid';
 
-import Navigation from './components/Navigation.vue'
+// import Navigation from './components/Navigation.vue'
 // import Heading from './components/Heading.vue'
 // import ProfilCard from './components/ProfilCard.vue'
 import Counter from './components/Counter.vue'
@@ -57,10 +61,15 @@ import Counter from './components/Counter.vue'
 export default {
   name: 'App',
   components: {
-    Navigation,
+    // Navigation,
     // Heading,
     // ProfilCard,
     Counter
+  },
+data() {
+    return {
+      counterList: [0, 0, 20, 0, 40, 65]
+    }
   },
 // data() {
 //     return {
@@ -161,8 +170,9 @@ export default {
   }
 
   .flex-center {
+    padding: 2.3rem 0;
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
