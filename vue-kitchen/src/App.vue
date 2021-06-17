@@ -1,7 +1,7 @@
 <template>
   <section>
     <Navigation />
-    <Heading />
+    <!-- <Heading /> -->
     <!-- <form class="form" @submit.prevent='addRecipe' >
       <fieldset class="fieldset">
         <label class="fieldset--label" for='name-field'>Name</label>
@@ -29,7 +29,7 @@
         </div>
         <button class="action" @click='deleteRecipe(index)' >Delete</button>
       </section> -->
-      <section class="section" >
+      <!-- <section class="section" >
         <ProfilCard
           :pro='true'
           :skills="['Pet Lama', 'Chase Lama', 'Eat Lama']"
@@ -37,55 +37,61 @@
           name='Niki Nik'
           town='Bratislava'
          />
+      </section> -->
+      
+      <section class="section flex-center" >
+        <Counter />
       </section>
 
   </section>
 </template>
 
 <script>
-import {v4 as uuidv4} from 'uuid';
+// import {v4 as uuidv4} from 'uuid';
 
 import Navigation from './components/Navigation.vue'
-import Heading from './components/Heading.vue'
-import ProfilCard from './components/ProfilCard.vue'
+// import Heading from './components/Heading.vue'
+// import ProfilCard from './components/ProfilCard.vue'
+import Counter from './components/Counter.vue'
 
 export default {
   name: 'App',
   components: {
     Navigation,
-    Heading,
-    ProfilCard
+    // Heading,
+    // ProfilCard,
+    Counter
   },
-data() {
-    return {
-      recipe: {
-        name: "",
-        ingredients: "",
-        steps: "",
-      },
-      recipes: [],
-    };
-  },
-  computed: {
-    formValid() {
-      const { name, ingredients, steps } = this.recipe;
-      return name && ingredients && steps;
-    },
-  },
-  methods: {
-    addRecipe() {
-      if (!this.formValid) {
-        return;
-      }
-      this.recipes.push({
-        id: uuidv4(),
-        ...this.recipe,
-      });
-    },
-    deleteRecipe(index) {
-      this.recipes.splice(index, 1);
-    },
-  },
+// data() {
+//     return {
+//       recipe: {
+//         name: "",
+//         ingredients: "",
+//         steps: "",
+//       },
+//       recipes: [],
+//     };
+//   },
+  // computed: {
+  //   formValid() {
+  //     const { name, ingredients, steps } = this.recipe;
+  //     return name && ingredients && steps;
+  //   },
+  // },
+  // methods: {
+  //   addRecipe() {
+  //     if (!this.formValid) {
+  //       return;
+  //     }
+  //     this.recipes.push({
+  //       id: uuidv4(),
+  //       ...this.recipe,
+  //     });
+  //   },
+  //   deleteRecipe(index) {
+  //     this.recipes.splice(index, 1);
+  //   },
+  // },
 };
 </script>
 
@@ -152,5 +158,13 @@ data() {
   .flex-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .flex-center {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
